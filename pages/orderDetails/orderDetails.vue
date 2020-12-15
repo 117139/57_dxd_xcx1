@@ -775,7 +775,7 @@
 				uni.chooseImage({
 					count: z_count,
 					sizeType: ['original', 'compressed'],
-					sourceType: ['album'],
+					sourceType: ['camera', 'album'],
 					success: function(res) {
 						console.log(res)
 						const tempFilePaths = res.tempFilePaths

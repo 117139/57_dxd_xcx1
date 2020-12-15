@@ -3,8 +3,8 @@
 		<view class="hengxian"></view>
 		<form class="container" @submit="formSubmit">
 			<view class="addmsg aic">
-				<view class="msgtit">物流公司</view>
-				<input class="msgsrk" name="wuliu" v-model="wuliu" type="text" placeholder="请填写物流公司" />
+				<view class="msgtit">发货方</view>
+				<input class="msgsrk" name="wuliu" v-model="wuliu" type="text" placeholder="请填写发货方" />
 			</view>
 			<view class="addmsg aic">
 				<view class="msgtit">发货人</view>

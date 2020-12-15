@@ -38,7 +38,7 @@
 				<text class="iconfont icon-next-m"></text>
 			</view>
 			<view class="d1 dis_flex aic ju_b" @tap="jump" data-url="/pages/my_wuliu/my_wuliu?type=1">
-				<view class="d1_l d1_l1">物</view>
+				<view class="d1_l " style="background-color: #4898ea;">物</view>
 				<view v-if="wuliu" class="flex_1">
 					<view class="w100 od_li dis_flex aic">
 						<view>{{wuliu.company_name}}</view>

@@ -135,6 +135,7 @@
 </template>
 
 <script>
+	var setTime_login
 	import service from '../../service.js';
 	import {
 		mapState,
@@ -170,7 +171,12 @@
 			
 		},
 		onShow() {
-			service.wxlogin()
+			setTime_login=setTimeout(()=>{
+				// service.wxlogin()
+			},4000)
+		},
+		onHide() {
+			setTime_login=''
 		},
 		onPageScroll(e){
 			// console.log(e)
