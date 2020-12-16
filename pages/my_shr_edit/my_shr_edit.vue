@@ -20,7 +20,7 @@
 						 disabled />
 						 <text class="iconfont icon-next-m" style="color: #999;font-size: 20upx;"></text>
 						
-						 <view style="width: 90upx;"></view>
+						 <!-- <view style="width: 90upx;"></view> -->
 					</view>
 				</picker>
 			<!-- </region-picker> -->
@@ -28,7 +28,7 @@
 				<view class="msgtit">详细地址</view>
 				<textarea class="msgsrk" name="xxaddress" v-model="xxaddress" type="text" placeholder="街道、楼牌号等" maxlength="40" />
 				
-				<view @tap.stop="dingwei" class="dw_btn">定位</view>
+				<!-- <view @tap.stop="dingwei" class="dw_btn">定位</view> -->
 			</view>
 			<view class="addmsg aic">
 				<view class="">设置默认地址</view>

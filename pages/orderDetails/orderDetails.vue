@@ -1,6 +1,7 @@
 <template>
 	<view>
 		<view style="width: 100%;height: 11upx;background: #F6F6F6;"></view>
+		<view v-if="!datas" class="zanwu">暂无数据</view>
 		<view v-if="datas" class="order_box">
 			<view class="d1 dis_flex aic ju_b">
 				<view class="d1_l">发</view>
@@ -42,7 +43,7 @@
 				</view>
 			</view>
 		</view>
-		<view style="width: 100%;height: 11upx;background: #F6F6F6;"></view>
+		<view v-if="datas" style="width: 100%;height: 11upx;background: #F6F6F6;"></view>
 		<view v-if="datas" class="order_box">
 			<!-- <picker mode = "date" :value="fh_time" start="09:01" end="21:01" @change="bindTimeChange"> -->
 			<view class="fh_time dis_flex aic ">

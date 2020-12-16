@@ -22,14 +22,18 @@
 					</picker>
 				</view>
 				<view v-if="datas.length==0" class="zanwu">暂无数据</view>
-				<view v-else class="qian_li boxsiz dis_flex aic ju_b" v-for="(item,index) in datas">
+				<view v-else class="qian_li boxsiz dis_flex aic ju_b" v-for="(item,index) in datas" @tap="jump" 
+				 :data-url="'/pages/orderDetails/orderDetails?type='+item.orders.status+'&id='+item.order_id">
 					<view class="li_l dis_flex ju_a">
 						<view class="d1">{{item.title}}</view>
 						<view class="d2">{{item.create_time}}</view>
 					</view>
-					<view v-if="item.plus_minus==0" class="li_r li_r1">{{item.price}}元</view>
-					<!-- <view v-else class="li_r">+元</view> -->
-					<view v-if="item.plus_minus==1" class="li_r">{{item.price}}元</view>
+					<view class="li_l dis_flex ju_a" style="align-items: flex-end;">
+						<view class="d2">{{item.orders.no}}</view>
+						<view v-if="item.plus_minus==0" class="li_r li_r1">{{item.price}}元</view>
+						<!-- <view v-else class="li_r">+元</view> -->
+						<view v-if="item.plus_minus==1" class="li_r">{{item.price}}元</view>
+					</view>
 				</view>
 				<view v-if="data_last" class="data_last">我可是有底线的哟~</view>
 

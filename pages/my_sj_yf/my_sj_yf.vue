@@ -29,7 +29,8 @@
 					</picker>
 				</view>
 				<view v-if="datas.length==0" class="zanwu">暂无数据</view>
-				<view v-else class="qian_li boxsiz dis_flex aic ju_b" v-for="(item,index) in datas">
+				<view v-else class="qian_li boxsiz dis_flex aic ju_b" v-for="(item,index) in datas" @tap="jump" 
+				 :data-url="'/pages/orderDetails/orderDetails?type='+item.orders.status+'&id='+item.order_id">
 					<view class="order_li_box1 dis_flex_c ju_b">
 						<view class="order_gs dis_flex aic">
 							<view>{{item.title.f_address}}</view>
@@ -212,6 +213,9 @@
 				})
 			},
 			
+			jump(e) {
+			  service.jump(e)
+			},
 		}
 	}
 </script>

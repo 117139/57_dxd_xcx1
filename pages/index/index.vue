@@ -41,6 +41,21 @@
 			</view>
 		</view>
 		<image v-if="sj_type==1" @tap="jump" data-url="/pages/order/order" class="xiandan" src="../../static/images/xiadan.png"></image>
+		
+		
+		<view v-if="show_tk" class="tk_big_box dis_flex aic ju_c">
+			<view class="dis_flex_c aic ju_c">
+				<view class="dis_flex_c tk_box">
+					<view class="tk_tit">提示</view>
+					<view class="tk_msg">为了更好的服务，小程序需要在分配订单时向您发送消息</view>
+					<view class="dis_flex ju_a ">
+						<view class="dy_btn dy_btn1" @tap="authMsg">订阅</view>
+						<view class="dy_btn" @tap="authMsg_on">取消</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -66,7 +81,39 @@
 				page:1,
 				size:20,
 				datas:[],
-				data_last:false
+				data_last:false,
+				
+				show_tk:false
+			}
+		},
+		watch: {
+			hasLogin() {
+				var that =this
+				console.log('watch')
+				wx.getSetting({
+					withSubscriptions:true,
+				  success (res) {
+				    console.log('res.authSetting')
+				    console.log(res)
+				    console.log(res.authSetting)
+						var itemSettings = res.subscriptionsSetting.itemSettings
+						console.log('itemSettings')
+						console.log(itemSettings)
+						     if (itemSettings) {
+						       if (itemSettings['-I6lIPrxg8bcr5AdAUtzPuksKa9hodpyD58cKPHfR8I'] === 'accept') {
+						         console.log('is accredit：ok')
+						       }else{
+										 that.show_tk=true
+									 }
+						     }else{
+									 that.show_tk=true
+								 }
+				    // res.authSetting = {
+				    //   "scope.userInfo": true,
+				    //   "scope.userLocation": true
+				    // }
+				  }
+				})
 			}
 		},
 		onShareAppMessage() {
@@ -79,11 +126,7 @@
 			this.getdata_list()
 		},
 		computed: {
-			...mapState([
-				'hasLogin',
-				'loginMsg',
-				'sj_type'
-			])
+			...mapState(['hasLogin','loginDatas','sj_type'])
 		},
 		onLoad() {
 			this.getdata()
@@ -94,17 +137,45 @@
 		},
 		methods: {
 			...mapMutations(['setnew_problem']),
+			authMsg(event) {
+				var that =this
+				uni.requestSubscribeMessage({
+					tmplIds: ['-I6lIPrxg8bcr5AdAUtzPuksKa9hodpyD58cKPHfR8I'],
+					success: function(res) {
+						console.log(res)
+						that.show_tk=false
+						uni.showToast({
+							icon:'none',
+							title:'订阅消息成功'
+						})
+					},
+					fail: function(err) {
+						console.log(err)
+						uni.showToast({
+							icon:'none',
+							title:'订阅消息失败'
+						})
+					}
+			
+				})
+			
+			},
+			authMsg_on(e){
+				var that =this
+				uni.showModal({
+						title: '温馨提示',
+						content: '拒绝后您将无法获取提示消息',
+						confirmText:"知道了",
+						showCancel:false,
+						success: function (res) {
+							///点击知道了的后续操作 
+							///如跳转首页面 
+							that.show_tk=false
+						}
+				});
+			},
 			call(e){
 				return service.call(e)
-			},
-			smsTest(){
-				// var msg=plus.messaging.createMessage(type)
-				// var msg = plus.messaging.createMessage(plus.messaging.TYPE_SMS);
-				// // msg.to = ['18310029587'];
-				// msg.to = [];
-				// msg.body = 'This is HTML5 Plus example test message';
-				// plus.messaging.sendMessage( msg );
-				plus.messaging.sendMessage(  );
 			},
 			onRetry(){
 				this.getdata()

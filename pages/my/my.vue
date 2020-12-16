@@ -171,9 +171,10 @@
 			
 		},
 		onShow() {
-			setTime_login=setTimeout(()=>{
-				// service.wxlogin()
-			},4000)
+			
+			// setTime_login=setTimeout(()=>{
+			// 	// service.wxlogin()
+			// },4000)
 		},
 		onHide() {
 			setTime_login=''
@@ -388,7 +389,7 @@
 		font-size: 28upx;
 		color: #333;
 		font-weight: bold;
-		
+		margin-right: 10upx;
 	}
 	.db_tel{
 		font-size: 26upx;
