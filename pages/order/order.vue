@@ -304,13 +304,13 @@
 					})
 					return
 				}
-				if(!that.hwzl_num){
-					uni.showToast({
-						icon:'none',
-						title:'请填写货物重量'
-					})
-					return
-				}
+				// if(!that.hwzl_num){
+				// 	uni.showToast({
+				// 		icon:'none',
+				// 		title:'请填写货物重量'
+				// 	})
+				// 	return
+				// }
 				var cargo={}
 				for(var i=0;i<that.hw_data.length;i++){
 					if(that.hw_data[i].type){
@@ -344,7 +344,7 @@
 					s_address:that.shr.id,
 					w_address:that.wuliu.id,
 					delivery_time:fh_time,
-					weight:that.hwzl_num,
+					weight:that.hwzl_num?that.hwzl_num:0,
 				}
 				var jkurl = '/order/orderSave'
 				if(that.id){
@@ -360,7 +360,6 @@
 					}
 					jkurl = '/order/orderUpdate'
 				}
-					
 				if (that.btnkg == 1) {
 					return
 				} else {
@@ -400,7 +399,6 @@
 									url:'/pages/orderlist/orderlist'
 								})
 							}
-							
 						},1000)
 							
 							
@@ -438,7 +436,7 @@
 			},
 			changeDatetimePicker(date) {
 				console.log('选择的日期时间数据：', date);
-				this.fh_time=date
+				this.fh_time=date.f3
 			},
 			bindTimeChange(e){
 				console.log(e)

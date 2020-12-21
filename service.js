@@ -228,13 +228,26 @@ const pveimg = function(e) {
 const call=  function (e){
 	console.log(e)
 	// return
-	if(!e.currentTarget.dataset.tel){
-		return
-	}
 	if(e.currentTarget.dataset.tel){
-		wx.makePhoneCall({
-			phoneNumber: e.currentTarget.dataset.tel+''
-		})
+		// wx.makePhoneCall({
+		// 	phoneNumber: e.currentTarget.dataset.tel+''
+		// })
+		// return
+		uni.showModal({
+		    title: '提示',
+		    content: '是否拨打'+e.currentTarget.dataset.tel+'?',
+		    success: function (res) {
+		        if (res.confirm) {
+							wx.makePhoneCall({
+								phoneNumber: e.currentTarget.dataset.tel+''
+							})
+							console.log('用户点击确定');
+		        } else if (res.cancel) {
+		            console.log('用户点击取消');
+		        }
+		    }
+		});
+		
 	}
 }
 

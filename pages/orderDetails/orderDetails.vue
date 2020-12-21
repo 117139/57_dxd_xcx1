@@ -8,7 +8,7 @@
 				<view class="flex_1">
 					<view class="w100 od_li dis_flex aic ju_b">
 						<view>{{datas.f_address.name}}</view>
-						<view>{{datas.f_address.phone}}</view>
+						<view @tap="call" :data-tel="datas.f_address.phone">{{datas.f_address.phone}}</view>
 					</view>
 					<view class="w100 od_li1">{{datas.f_address.company_name}}</view>
 					<view class="w100 od_li2">{{datas.f_address.address}}</view>
@@ -22,7 +22,7 @@
 				<view class="flex_1">
 					<view class="w100 od_li dis_flex aic ju_b">
 						<view>{{datas.s_address.name}}</view>
-						<view>{{datas.s_address.phone}}</view>
+						<view  @tap="call" :data-tel="datas.s_address.phone">{{datas.s_address.phone}}</view>
 					</view>
 					<view class="w100 od_li2">{{datas.s_address.address}}</view>
 				</view>
@@ -32,7 +32,7 @@
 				<view class="flex_1">
 					<view class="w100 od_li dis_flex aic  ju_b">
 						<view>{{datas.w_address.name}}</view>
-						<view>{{datas.w_address.phone}}</view>
+						<view @tap="call" :data-tel="datas.w_address.phone">{{datas.w_address.phone}}</view>
 					</view>
 					<view class="w100 od_li1">{{datas.w_address.company_name}}</view>
 					<view class="w100 od_li2">{{datas.w_address.address}}</view>
@@ -83,7 +83,7 @@
 					<view class="sf_li dis_flex aic" v-for="(item,index) in datas.orderWorker">
 						<image class="sf_tx" :src="getimg(item.user.avatar)" mode="aspectFill"></image>
 						<view class="sf_name flex_1">{{item.user.real_name}}</view>
-						<view class="sf_tel">{{getTel(item.user.phone,3,4)}}</view>
+						<view class="sf_tel" @tap="call" :data-tel="item.user.phone">{{item.user.phone}}</view>
 					</view>
 				</view>
 			</view>
@@ -93,7 +93,7 @@
 				<view class=" flex_1"></view>
 				<view class="fh_times flex_1">￥{{datas.total_amount}}元</view>
 			</view>
-			<view v-if="sj_type==0&&type>2" class="fh_time dis_flex aic ">
+			<view v-if="sj_type==0&&type>2&&datas.worker_money" class="fh_time dis_flex aic ">
 				<view class="fh_name">人均运费：</view>
 				<view class=" flex_1"></view>
 				<view class="fh_times flex_1">￥{{datas.worker_money}}元</view>
@@ -154,8 +154,8 @@
 			<!-- 司机 -->
 			<block v-if="sj_type==0">
 				<view v-if="type==2" class="order_bottom order_bottom1 dis_flex aic ju_a">
-					<view class="sjjd_btn" @tap="order_back">拒绝接单</view>
-					<view class="sjjd_btn" style="background: #FFDA22;" @tap="order_next">立即接单</view>
+					<!-- <view class="sjjd_btn" @tap="order_back">拒绝接单</view> -->
+					<view class="sjjd_btn" style="background: #FFDA22;width: 690upx;" @tap="order_next">立即接单</view>
 				</view>
 				<view v-if="type==3" class="order_bottom order_bottom1 dis_flex aic ju_a">
 
@@ -371,11 +371,7 @@
 			//完成订单
 			order_ok() {
 				var that = this
-				var jkurl = '/order/orderFinish'
-				if (that.btnkg == 1) {
-					return
-				}
-				that.btnkg = 1
+				
 				if (that.sj_img.length == 0) {
 					uni.showToast({
 						icon: 'none',
@@ -388,6 +384,11 @@
 					id: that.id,
 					img: that.sj_img.join(',')
 				}
+				var jkurl = '/order/orderFinish'
+				if (that.btnkg == 1) {
+					return
+				}
+				that.btnkg = 1
 				service.P_post(jkurl, datas).then(res => {
 
 					that.btnkg = 0
@@ -768,35 +769,54 @@
 			pveimg(e) {
 				service.pveimg(e)
 			},
+			call(e){
+				service.call(e)
+			},
 			upimg() {
 				var that = this
 				// 从相册选择1张图
-
-				var z_count = 9 - that.sj_img.length
-				uni.chooseImage({
-					count: z_count,
-					sizeType: ['original', 'compressed'],
-					sourceType: ['camera', 'album'],
-					success: function(res) {
-						console.log(res)
-						const tempFilePaths = res.tempFilePaths
-
-						const imglen = that.sj_img.length
-
-						if (imglen == 9) {
-							wx.showToast({
-								icon: 'none',
-								title: '最多可上传九张'
-							})
-							return
-						} else {
-							// that.sj_img=that.sj_img.concat(res.tempFilePaths).slice(0,9)
+					var z_count = 9 - that.sj_img.length
+				uni.showActionSheet({
+						itemList: ['拍照', '相册'],
+						success: function (res) {
+								console.log('选中了第' + (res.tapIndex + 1) + '个按钮');
+								var sourceType=['camera', 'album']
+								if(res.tapIndex==0){
+									 sourceType=['camera']
+								}else{
+									sourceType=['album']
+								}
+								uni.chooseImage({
+									count: z_count,
+									sizeType: ['original', 'compressed'],
+									sourceType:sourceType,
+									success: function(res) {
+										console.log(res)
+										const tempFilePaths = res.tempFilePaths
+								
+										const imglen = that.sj_img.length
+								
+										if (imglen == 9) {
+											wx.showToast({
+												icon: 'none',
+												title: '最多可上传九张'
+											})
+											return
+										} else {
+											// that.sj_img=that.sj_img.concat(res.tempFilePaths).slice(0,9)
+										}
+										// return
+										that.upimg1(tempFilePaths, 0)
+								
+									}
+								});
+						},
+						fail: function (res) {
+								console.log(res.errMsg);
 						}
-						// return
-						that.upimg1(tempFilePaths, 0)
-
-					}
 				});
+			
+				
 			},
 			upimg1(imgs, i) {
 				var that = this

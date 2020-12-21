@@ -10,7 +10,7 @@
 					</view>
 				</view>
 				<view class="pj_xj dis_flex">
-					<i v-for="(item,index) in 5" :class="index<datas.sum_rate?'active':''" class="iconfont icon-wujiaoxingxingxingshoucangdianji-copy"></i>
+					<i v-for="(item,index) in 5" :class="index<datas.satisficing?'active':''" class="iconfont icon-wujiaoxingxingxingshoucangdianji-copy"></i>
 					
 				</view>
 				<view class="gw_cj_d1 tac">{{datas.per_rate}}%<br>满意度</view>

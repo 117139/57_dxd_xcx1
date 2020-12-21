@@ -10,6 +10,17 @@
 					</view>
 				</view>
 			</view>
+			
+			<view class="sj_box2 dis_flex ju_b">
+				<view class="flex_1" style="border-right: 1px solid #EEEEEE;">
+					<view class="sr_name">年度支出</view>
+					<view class="sr_num">{{money_year}}元</view>
+				</view>
+				<view  class="flex_1">
+					<view class="sr_name">本月支出</view>
+					<view class="sr_num">{{money_month}}元</view>
+				</view>
+			</view>
 			<view style="width: 100%;background: #F1F1F1;height: 10upx;"></view>
 			<view class="box1 boxsiz">
 				<view class="xl_time_box dis_flex aic ju_b boxsiz">
@@ -287,6 +298,17 @@
 		margin-right: 4px;
 	}
 
+	.sj_box2>view{
+		padding:25upx 30upx;
+	}
+	.sr_name{
+		font-size: 34upx;
+		color: #999;
+	}
+	.sr_num{
+		font-size: 34upx;
+		color: #333;
+	}
 	.pay_btn {
 		width: 102upx;
 		height: 40upx;
