@@ -150,7 +150,9 @@
 							datas = JSON.parse(datas)
 						}
 						console.log(datas)
-						that.money_sum = datas.money_sum
+						that.money_sum = datas.money_sum||0
+						that.money_month = datas.money_month||0
+						that.money_year = datas.money_year||0
 						if(page_that==1){
 							that.datas = datas.money_month_data.data
 						}else{
