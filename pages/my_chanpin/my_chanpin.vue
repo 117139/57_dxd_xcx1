@@ -9,6 +9,7 @@
 			<view class="dis_flex cp_list ">
 				<view v-if="datas.length==0" class="zanwu">暂无数据</view>
 				<view class="cp_li" v-for="(item,index) in datas">
+					<image class="img_del" src="../../static/images/img_del.png" mode="aspectFill" @tap="cp_del(item)" :data-idx="index"></image>
 					<view class="oh1">{{item.name}}</view>
 				</view>
 			</view>
@@ -22,6 +23,7 @@
 		mapState,
 		mapMutations
 	} from 'vuex'
+	var that
 	export default {
 		data() {
 			return {
@@ -32,6 +34,7 @@
 			}
 		},
 		onLoad() {
+			that=this
 			this.onRetry()
 			
 		},
@@ -39,6 +42,66 @@
 			...mapState(['hasLogin', 'forcedLogin', 'userName', 'sj_type', 'loginDatas']),
 		},
 		methods: {
+			cp_del(item){
+				uni.showModal({
+					title: '提示',
+					content: '确定要删除该产品吗',
+					success(res) {
+						if (res.confirm) {
+							var datas = {
+								token: that.loginDatas.token || '',
+								id: item.id
+							}
+										
+						
+							//selectSaraylDetailByUserCard
+							var jkurl = '/my/productDelete'
+							uni.showLoading({
+								mask:true,
+								title: '正在操作'
+							})
+							service.P_post(jkurl, datas).then(res => {
+								that.btnkg = 0
+								console.log(res)
+								if (res.code == 1) {
+									uni.showToast({
+										icon: 'none',
+										title: '操作成功'
+									})
+									setTimeout(()=>{
+										that.onRetry()
+									},700)
+									console.log(datas)
+							
+							
+								} else {
+									if (res.msg) {
+										uni.showToast({
+											icon: 'none',
+											title: res.msg
+										})
+									} else {
+										uni.showToast({
+											icon: 'none',
+											title: '操作失败'
+										})
+									}
+								}
+							}).catch(e => {
+								that.btnkg = 0
+								console.log(e)
+								uni.showToast({
+									icon: 'none',
+									title: '获取数据失败'
+								})
+							})
+				
+						} else if (res.cancel) {
+							console.log('用户点击取消')
+						}
+					}
+				})
+			},
 			add_fuc() {
 				var that = this
 				if (!that.newtab) {
@@ -273,9 +336,20 @@
 		font-size: 28upx;
 		color: #333;
 		margin-bottom: 34upx;
+		position: relative;
 	}
 
 	.cp_li:nth-child(2n) {
 		margin-left: 30upx;
+	}
+	.img_del {
+		width: 30upx;
+		height: 30upx;
+		background: #FF4B4B;
+		border-radius: 15upx;
+		position: absolute;
+		top: -10upx;
+		right: -10upx;
+		z-index: 10;
 	}
 </style>

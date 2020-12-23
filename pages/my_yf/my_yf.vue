@@ -14,11 +14,11 @@
 			<view class="sj_box2 dis_flex ju_b">
 				<view class="flex_1" style="border-right: 1px solid #EEEEEE;">
 					<view class="sr_name">年度支出</view>
-					<view class="sr_num">{{money_year}}元</view>
+					<view class="sr_num">{{money_year?money_year:0}}元</view>
 				</view>
 				<view  class="flex_1">
 					<view class="sr_name">本月支出</view>
-					<view class="sr_num">{{money_month}}元</view>
+					<view class="sr_num">{{money_month?money_month:0}}元</view>
 				</view>
 			</view>
 			<view style="width: 100%;background: #F1F1F1;height: 10upx;"></view>
@@ -68,6 +68,8 @@
 			return {
 				btnkg:0,
 				money_sum:'',
+				money_year:'',
+				money_month:'',
 				datas: [],
 				date: new Date(),
 				page:1,
@@ -306,10 +308,12 @@
 	.sr_name{
 		font-size: 34upx;
 		color: #999;
+		text-align: center;
 	}
 	.sr_num{
 		font-size: 34upx;
 		color: #333;
+		text-align: center;
 	}
 	.pay_btn {
 		width: 102upx;
