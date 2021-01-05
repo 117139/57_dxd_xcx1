@@ -1,0 +1,43 @@
+
+.cz_box.data-v-7bdd54de{
+	width: 100%;
+	padding: 0 30rpx;
+}
+.cz_tit.data-v-7bdd54de{
+	height: 100rpx;
+	font-size: 30rpx;
+	color: #333;
+}
+.cz_num.data-v-7bdd54de{
+	font-size: 40rpx;
+	color: #333;
+	border-bottom: 1px solid #eee;
+	padding: 10rpx 0;
+}
+.cz_num input.data-v-7bdd54de{
+	font-size: 60rpx;
+	padding-left: 30rpx;
+	height: 100rpx;
+}
+.cz_btn.data-v-7bdd54de{
+	margin-top: 100rpx;
+	width: 690rpx;
+	height: 88rpx;
+	background: #FFDA22;
+	border-radius: 44rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	
+	font-size: 40rpx;
+	font-family: PingFang;
+	font-weight: bold;
+	color: #333333;
+}
+

@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/about/about",
+    "pages/orderlist/orderlist",
+    "pages/login/login",
+    "pages/login_tel/login_tel",
+    "pages/my_fankui/my_fankui",
+    "pages/my_address/my_address",
+    "pages/my_add_edit/my_add_edit",
+    "pages/my_shr/my_shr",
+    "pages/my_wuliu/my_wuliu",
+    "pages/my_shr_edit/my_shr_edit",
+    "pages/my_wuliu_edit/my_wuliu_edit",
+    "pages/my_yf/my_yf",
+    "pages/my_chanpin/my_chanpin",
+    "pages/login_msg/login_msg",
+    "pages/my_pinglun/my_pinglun",
+    "pages/pingjia/pingjia",
+    "pages/order/order",
+    "pages/orderDetails/orderDetails",
+    "pages/my_sj_pj/my_sj_pj",
+    "pages/my_sj_yf/my_sj_yf",
+    "pages/my_chongzhi/my_chongzhi"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "达鑫达",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#A8ABAE",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/tabbar/taba1.png",
+        "selectedIconPath": "static/images/tabbar/tabb1.png"
+      },
+      {
+        "pagePath": "pages/orderlist/orderlist",
+        "text": "订单",
+        "iconPath": "static/images/tabbar/taba2.png",
+        "selectedIconPath": "static/images/tabbar/tabb2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/images/tabbar/taba3.png",
+        "selectedIconPath": "static/images/tabbar/tabb3.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "达鑫达申请获取位置信息"
+    }
+  },
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.11",
+      "provider": "wx50b5593e81dd937a"
+    }
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap99.json"
+}

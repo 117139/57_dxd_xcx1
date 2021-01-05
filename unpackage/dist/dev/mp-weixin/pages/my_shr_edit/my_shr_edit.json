@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "编辑收货人",
+  "enablePullDownRefresh": false,
+  "backgroundColor": "#F6F6F6",
+  "usingComponents": {
+    "region-picker": "/components/region-picker/region-picker"
+  }
+}

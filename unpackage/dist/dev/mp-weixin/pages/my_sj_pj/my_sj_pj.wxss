@@ -1,0 +1,119 @@
+
+.iconfont.active.data-v-04569766{
+	color: #FFDA22;
+}
+.gwxq_cj.data-v-04569766 {
+	width: 691rpx;
+	height: 618rpx;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10rpx 0px rgba(0, 0, 0, 0.1);
+	margin: 30rpx auto 0;
+	padding-top: 65rpx;
+}
+.pj_name.data-v-04569766 {
+	margin-bottom: 70rpx;
+}
+.pj_tx.data-v-04569766 {
+	width: 86rpx;
+	height: 86rpx;
+	border-radius: 50%;
+	margin-right: 35rpx;
+}
+.sj_name.data-v-04569766 {
+	font-size: 34rpx;
+	font-family: PingFang;
+	font-weight: bold;
+	color: #333333;
+}
+.sj_tel.data-v-04569766 {
+	font-size: 28rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #666;
+}
+.pj_xj.data-v-04569766 {
+	font-size: 40rpx;
+	color: #FFA889;
+}
+.gw_cj_d1.data-v-04569766 {
+	margin-top: 24rpx;
+	margin-bottom: 45rpx;
+	font-size: 24rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #333333;
+	text-align: center;
+}
+.gwd31.data-v-04569766 {
+	width: 180rpx;
+	font-size: 24rpx;
+	color: #333;
+}
+.c9.data-v-04569766 {
+	color: #999;
+}
+.gwd32.data-v-04569766 {
+	width: 352rpx;
+	height: 5rpx;
+	background: #E3E7ED;
+	border-radius: 3rpx;
+	margin-left: 8rpx;
+}
+.gw_cj_d3.data-v-04569766 {
+	margin-bottom: 30rpx;
+}
+.gwd32_b.data-v-04569766 {
+
+	height: 5rpx;
+	background: #3677F1;
+	border-radius: 3rpx;
+}
+.pj_ts.data-v-04569766 {
+	width: 100%;
+	height: 100rpx;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+
+	font-size: 30rpx;
+	font-family: PingFang;
+	font-weight: bold;
+	color: #333333;
+}
+.pj_tsbox.data-v-04569766 {
+	width: 691rpx;
+	min-height: 422rpx;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10rpx 0px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	padding: 60rpx;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+.pj_tsbox view.data-v-04569766 {
+	font-size: 30rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #333333;
+}
+.pj_tsbox.data-v-04569766::before {
+	content: '';
+	position: absolute;
+	top: -45rpx;
+	left: -80rpx;
+	width: 160rpx;
+	height: 90rpx;
+	border-radius: 160rpx;
+	background: #F4DE5D;
+	opacity: 0.22;
+}
+.pj_tsbox view+view.data-v-04569766 {
+	margin-top: 55rpx;
+}
+

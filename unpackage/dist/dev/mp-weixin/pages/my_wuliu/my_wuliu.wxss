@@ -1,0 +1,104 @@
+
+.h_main.data-v-a4191b34 {
+	min-height: 100vh;
+	padding-top: 20rpx;
+	box-sizing: border-box;
+	background: #F6F6F6;
+}
+.add_btn.data-v-a4191b34 {
+	width: 690rpx;
+	height: 88rpx;
+	background: #FFDA22;
+	border-radius: 44rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	margin: 30rpx auto 30rpx;
+	font-size: 30rpx;
+	color: #333;
+	font-weight: bold;
+
+	font-family: PingFang SC;
+}
+.add_list.data-v-a4191b34 {
+	width: 100%;
+}
+.add_li.data-v-a4191b34 {
+	width: 100%;
+	min-height: 203rpx;
+	background: #FFFFFF;
+	padding: 10px 35rpx;
+	box-sizing: border-box;
+	margin-bottom: 20rpx;
+}
+.add_l.data-v-a4191b34 {
+	width: 520rpx;
+}
+.add_l .d1.data-v-a4191b34 {
+
+	font-size: 30rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #292929;
+	margin-bottom: 15rpx;
+}
+.add_l .d1 text.data-v-a4191b34 {
+
+	font-size: 22rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #999999;
+	margin-left: 10rpx;
+}
+.add_l .d1 .add_moren.data-v-a4191b34 {
+	min-width: 52rpx;
+	min-height: 28rpx;
+	background: #FFDA22;
+	border-radius: 4rpx;
+	font-size: 20rpx;
+	color: #333;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.add_l .d2.data-v-a4191b34 {
+	font-size: 26rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #292929;
+	margin-bottom: 15rpx;
+}
+.add_l .d3.data-v-a4191b34 {
+	font-size: 24rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #292929;
+}
+.add_rhx.data-v-a4191b34 {
+	width: 70rpx;
+	height: 2rpx;
+	background: #D7D7D7;
+}
+.add_r text.data-v-a4191b34 {
+
+	font-size: 24rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #333333;
+}
+.add_r .iconfont.data-v-a4191b34 {
+	font-size: 30rpx;
+}
+

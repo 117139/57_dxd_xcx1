@@ -180,7 +180,9 @@
 				this.page=1
 				this.btnkg=0
 				this.data_last=false
-				this.getdatalist()
+				if(this.hasLogin){
+					this.getdatalist()
+				}
 			},
 			order_del(item,index){
 				var that =this

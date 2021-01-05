@@ -1,0 +1,102 @@
+
+.dw_btn.data-v-aa0e8b84{
+	width: 80rpx;
+	height: 100rpx;
+	background: #fff;
+	position: relative;
+	top: -50rpx;
+	z-index: 99;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	color: #FFAE22;
+	font-size: 28rpx;
+	border: 0;
+	padding: 0;
+}
+.dw_btn.data-v-aa0e8b84::after{
+	display: none;
+}
+.container.data-v-aa0e8b84 {
+	width: 100%;
+	display: block;
+	padding: 0 28rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+	position: relative;
+}
+.addmsg.data-v-aa0e8b84 {
+	width: 694rpx;
+	min-height: 90rpx;
+	border-bottom: 1px solid #F3F3F3;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	
+	font-size: 26rpx;
+	color: #333;
+}
+.addmsg textarea.data-v-aa0e8b84{
+	height: 180rpx;
+	text-align: left;
+	padding: 30rpx 10rpx;
+	box-sizing: border-box;
+	text-align: left;
+}
+.msgtit.data-v-aa0e8b84 {
+	width: 138rpx;
+	font-size: 28rpx;
+	line-height: 100rpx;
+	color: #666;
+}
+.msgsrk.data-v-aa0e8b84 {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	text-align: right;
+	font-size: 28rpx;
+}
+.definebtn.data-v-aa0e8b84 {
+	position: fixed;
+	border-radius: 0;
+	bottom: 30rpx;
+	left: 28rpx;
+	right: 28rpx;
+	height: 84rpx;
+	border-radius: 44rpx;
+	margin-top: 100rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	color: #333;
+	font-size: 28rpx;
+	background-color: #FFDA22;
+}
+.wx-switch-input.data-v-aa0e8b84 {
+	width: 86rpx !important;
+	height: 50rpx !important;
+}
+.wx-switch-input.data-v-aa0e8b84::before {
+	width: 84rpx !important;
+	height: 48rpx !important;
+}
+.wx-switch-input.data-v-aa0e8b84::after {
+	width: 44rpx !important;
+	height: 44rpx !important;
+}
+

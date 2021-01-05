@@ -1,0 +1,43 @@
+
+.login_box.data-v-f664dadc {
+	width: 100%;
+	height: 690rpx;
+	font-size: 36rpx;
+	color: #333;
+}
+.logo.data-v-f664dadc {
+	width: 311rpx;
+	height: 94rpx;
+	margin-bottom: 25rpx;
+}
+.login_tip.data-v-f664dadc {
+	font-size: 26rpx;
+	color: #999;
+}
+.login_btn.data-v-f664dadc {
+	width: 100%;
+	margin-top: 40rpx;
+}
+.login_btn button.data-v-f664dadc {
+	width: 690rpx;
+	height: 88rpx;
+	background: #1AAC19;
+	border-radius: 44rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	font-size: 30rpx;
+	color: #fff;
+}
+.wx_icon.data-v-f664dadc {
+	width: 53rpx;
+	height: 43rpx;
+	margin-right: 30rpx;
+}
+

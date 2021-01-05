@@ -1,0 +1,107 @@
+
+.container.data-v-79b02946 {
+	width: 100%;
+	padding: 30rpx;
+	box-sizing: border-box;
+}
+.add_box.data-v-79b02946 {
+	width: 100%;
+	margin-bottom: 5rpx;
+}
+.add_int.data-v-79b02946 {
+	min-width: 0;
+	width: 519rpx;
+	height: 79rpx;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	border-radius: 4rpx;
+	padding: 0 25rpx;
+	box-sizing: border-box;
+
+	font-size: 28rpx;
+	font-family: PingFang SC;
+	font-weight: 500;
+	color: #9F9F9F;
+}
+.add_btn.data-v-79b02946 {
+	width: 154rpx;
+	height: 80rpx;
+	background: #FFDA22;
+	box-shadow: 0px 0px 10rpx 0px rgba(34, 23, 20, 0.1);
+	border-radius: 5rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	font-size: 28rpx;
+	color: #000;
+}
+.cp_tit.data-v-79b02946 {
+	font-size: 30rpx;
+	color: #333;
+	padding: 45rpx 20rpx;
+	line-height: 30rpx;
+	box-sizing: border-box;
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.cp_tit.data-v-79b02946::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 46rpx;
+	width: 3rpx;
+	height: 28rpx;
+	background: #FFDA22;
+}
+.cp_list.data-v-79b02946 {
+	width: 100%;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.cp_li.data-v-79b02946 {
+	width: 329rpx;
+	height: 80rpx;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10rpx 0px rgba(34, 23, 20, 0.1);
+	border-radius: 11rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	font-size: 28rpx;
+	color: #333;
+	margin-bottom: 34rpx;
+	position: relative;
+}
+.cp_li.data-v-79b02946:nth-child(2n) {
+	margin-left: 30rpx;
+}
+.img_del.data-v-79b02946 {
+	width: 30rpx;
+	height: 30rpx;
+	background: #FF4B4B;
+	border-radius: 15rpx;
+	position: absolute;
+	top: -10rpx;
+	right: -10rpx;
+	z-index: 10;
+}
+

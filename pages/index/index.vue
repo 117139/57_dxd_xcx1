@@ -43,7 +43,7 @@
 		<image v-if="sj_type==1" @tap="jump" data-url="/pages/order/order" class="xiandan" src="../../static/images/xiadan.png"></image>
 		
 		
-		<view v-if="show_tk" class="tk_big_box dis_flex aic ju_c">
+		<!-- <view v-if="show_tk" class="tk_big_box dis_flex aic ju_c">
 			<view class="dis_flex_c aic ju_c">
 				<view class="dis_flex_c tk_box">
 					<view class="tk_tit">提示</view>
@@ -54,7 +54,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		
 	</view>
 </template>
@@ -90,7 +90,7 @@
 			hasLogin() {
 				var that =this
 				console.log('watch')
-				wx.getSetting({
+				/*wx.getSetting({
 					withSubscriptions:true,
 				  success (res) {
 				    console.log('res.authSetting')
@@ -108,12 +108,9 @@
 						     }else{
 									 that.show_tk=true
 								 }
-				    // res.authSetting = {
-				    //   "scope.userInfo": true,
-				    //   "scope.userLocation": true
-				    // }
+				    
 				  }
-				})
+				})*/
 			}
 		},
 		onShareAppMessage() {

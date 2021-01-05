@@ -10,14 +10,27 @@
 </template>
 
 <script>
+	import service from '../../service.js';
+	import {
+		mapState,
+		mapMutations
+	} from 'vuex'
 	export default {
 		data() {
 			return {
 				cz_num:''
 			}
 		},
+		computed: {
+			...mapState([
+				'hasLogin',
+				'loginDatas',
+				'sj_type'
+			])
+		},
 		methods: {
 			sub(){
+				var that =this
 				if(!this.cz_num){
 					uni.showToast({
 						icon:'none',
@@ -25,9 +38,67 @@
 					})
 					return
 				}
-				uni.showToast({
-					icon:'none',
-					title:'充值操作'
+				var datas = {
+					token: that.loginDatas.token || '',
+					money: this.cz_num
+				}
+				if (this.btnkg == 1) {
+					return
+				}
+				this.btnkg = 1
+				uni.showLoading({
+					mask: true,
+					title: '正在生成订单'
+				})
+				var jkurl="/my/charge"
+				
+				service.P_post(jkurl, datas).then(res => {
+					that.btnkg = 0
+					console.log(res)
+					if (res.code == 1) {
+						var datas = res.data
+						console.log(typeof datas)
+				
+						if (typeof datas == 'string') {
+							datas = JSON.parse(datas)
+						}
+						console.log(res)
+						service.wxpay(res.data, 'fwb').then(res => {
+							uni.showToast({
+								icon: 'none',
+								title: '支付成功'
+							})
+							setTimeout(function() {
+								uni.navigateBack()
+							}, 1000)
+						}).catch(e => {
+							that.btnkg = 0
+							uni.showToast({
+								icon: 'none',
+								title: '微信支付失败'
+							})
+										
+						})
+					} else {
+						if (res.msg) {
+							uni.showToast({
+								icon: 'none',
+								title: res.msg
+							})
+						} else {
+							uni.showToast({
+								icon: 'none',
+								title: '操作失败'
+							})
+						}
+					}
+				}).catch(e => {
+					that.btnkg = 0
+					console.log(e)
+					uni.showToast({
+						icon: 'none',
+						title: '操作失败'
+					})
 				})
 			}
 		}

@@ -4,7 +4,8 @@ import event from 'common/event.js'
 // 管理账号信息
 const USERS_KEY = 'USERS_KEY';
 const STATE_KEY = 'STATE_KEY';
-const imgurl = 'http://daxinda.cn.aa.800123456.top/';
+// const imgurl = 'http://daxinda.cn.aa.800123456.top/';
+const imgurl = 'https://www.daxinda.cn/';
 const IPurl = imgurl+'api/';
 //测试
 const appid='wx49a560f7feac0feb'
@@ -431,7 +432,10 @@ const wxpay=function (datas,type){
 		mask:true,
 		title:'正在拉起支付'
 	})
-	datas=JSON.parse(datas)
+	
+	if (typeof datas == 'string') {
+		datas=JSON.parse(datas)
+	}
 	return new Promise((resolve,reject)=>{
 		uni.hideLoading()
 		uni.requestPayment({
@@ -685,6 +689,8 @@ const getTel=function (num,num1,num2){
 	var str = num.substring(0,num1)+mg+num.substring(num.length-num2);
 	return str
 }
+
+
 export default {
 	getUsers,
 	addUser,
@@ -706,5 +712,6 @@ export default {
 	get_fwb,
 	getimg,
 	getimgarr,
-	getTel
+	getTel,
+	wxpay
 }

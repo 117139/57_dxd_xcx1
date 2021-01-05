@@ -74,7 +74,8 @@
 				date: new Date(),
 				page:1,
 				size:20,
-				data_last:false
+				data_last:false,
+				show_num:0
 			}
 		},
 		computed: {
@@ -99,7 +100,13 @@
 			this.date=year+'-'+month
 			this.onRetry()
 		},
-		
+		onShow() {
+			
+			if(this.show_num>0){
+				this.onRetry()
+			}
+			this.show_num++
+		},
 		methods: {
 			onPullDownRefresh() {
 				this.onRetry()

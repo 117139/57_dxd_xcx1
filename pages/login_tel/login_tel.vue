@@ -4,7 +4,7 @@
 			<image class="logo" src="../../static/images/logo.png" mode=""></image>
 			<text>达鑫达</text>
 		</view>
-		<view class="dis_flex aic ju_c login_tip">登录表示您同意<text @tap="jump" data-url="/pages/about/about?type=yszc">《法律声明和隐私权先》</text></view>
+		<view class="dis_flex aic ju_c login_tip">登录表示您同意<text @tap="jump" data-url="/pages/about/about?type=yszc">《法律声明和隐私权限》</text></view>
 		<view class="dis_flex aic ju_c login_btn">
 			<button class='bottom' open-type="getPhoneNumber" @getphonenumber="onGetPhoneNumber">
 				<image class="wx_icon" src="../../static/images/wx.png"></image>
